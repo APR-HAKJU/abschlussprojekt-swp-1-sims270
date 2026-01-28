@@ -22,16 +22,27 @@ namespace Ilumisoft.Minesweeping.UI
             button.onClick.AddListener(OnButtonClick);
         }
 
-        private void OnButtonClick()
+private void OnButtonClick()
         {
-            if (sceneLoader != null)
-            {
-                sceneLoader.LoadScene(sceneName);
-            }
-            else
-            {
-                SceneManager.LoadScene(sceneName);
-            }
+            // 1. Minesweeper-Objekt deaktivieren
+        GameObject minesweeperObject = GameObject.FindGameObjectWithTag("minesweeper");
+            if (minesweeperObject != null)
+                {
+                minesweeperObject.SetActive(false);
+                }
+
+            // There are two Main Cameras one for Minesweeper and one for the UI
+            // 2. Set the UI Camera as the Main Camera it has tag "MainCamera2"
+            var uiCamera = GameObject.FindGameObjectWithTag("Maincamera2");
+            if (uiCamera != null)
+                {
+                //Camera.main.gameObject.tag = "Untagged"; // Remove the MainCamera tag from the current main camera
+                uiCamera.tag = "MainCamera"; // Set the UI camera as the main camera
+                }
+
+            
+        
+            
         }
     }
 }

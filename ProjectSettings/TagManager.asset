@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 3
   tags:
   - Bomb
+  - CinemachineTarget
+  - minesweeper
+  - Maincamera2
+  - minesweeper_start_button
   layers:
   - Default
   - TransparentFX

@@ -49,29 +49,18 @@ namespace Ilumisoft.Minesweeping
         }
 
         /// <summary>
-        /// Adds the bomb tiles to the grid
+        /// Adds the bomb tiles to the grid at 4 rightmost tiles in top row
         /// </summary>
         private void AddBombsToGrid()
         {
             // Make sure the number of bombs is not larger than the grid size
             bombCount = Mathf.Min(bombCount, grid.Width * grid.Height);
 
-            for (int i = 0; i < bombCount; i++)
+            // Place bombs in the 4 rightmost tiles of the top row
+            for (int i = 1; i < bombCount && i <= 4; i++)
             {
-                // Calculate a random position
-                int x = Random.Range(0, grid.Width);
-                int y = Random.Range(0, grid.Height);
-
-                // Add a bomb if no tile has been assigned yet to the position
-                if (grid.TryGetTile(x, y, out _) == false)
-                {
-                    AddTileToGrid(x, y, bombTilePrefab);
-                }
-                // Otherwise our random position is already in use and we need to get a new one
-                else
-                {
-                    i--;
-                }
+                int x = grid.Width - i;
+                AddTileToGrid(x, 0, bombTilePrefab);
             }
         }
 
