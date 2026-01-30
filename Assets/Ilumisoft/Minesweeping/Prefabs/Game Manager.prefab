@@ -100,7 +100,7 @@ MonoBehaviour:
   normalTilePrefab: {fileID: 2538965909679406392, guid: 8b3be3472d450d747985c267aabdc835, type: 3}
   bombTilePrefab: {fileID: 3584066973208056085, guid: 36b11f2508c73cf4690c46b13841358b, type: 3}
   grid: {fileID: 5840025674345120159}
-  bombCount: 10
+  bombCount: 5
 --- !u!1001 &5840025673754509977
 PrefabInstance:
   m_ObjectHideFlags: 0
