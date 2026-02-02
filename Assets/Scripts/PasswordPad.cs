@@ -6,7 +6,7 @@ using StarterAssets;
 
 public class PasswordPad : MonoBehaviour
 {
-    [SerializeField] private string correctPassword = "123"; // 3-digit password (digits 1-9)
+    [SerializeField] private string correctPassword = "873"; // 3-digit password (digits 1-9)
     [SerializeField] private TMPro.TextMeshProUGUI displayText; // Text to show entered digits
     [SerializeField] private TMPro.TextMeshProUGUI messageText; // Text to show error/success messages
     [SerializeField] private Button[] numberButtons = new Button[9]; // Buttons 1-9
